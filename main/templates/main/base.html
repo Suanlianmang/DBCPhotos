@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DBC-Photos |{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'main/photos/dbclogo.ico' %}" type="image/jpg">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel='stylesheet' href="{% static 'main/main.css' %}">
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Photo collection of DBC-Marem student photographer">
+	<meta name="keyward" content="photos, student, India, photography, Don Bosco Colleg, Manipur">
+	<meta name="author" content="Suanlianmang">
+	<meta name="institution" content="Don Bosco Colleg, Maram" >
+	<meta name="address" content="Senapati District, Manipur, India">
+</head>
+<body>
+<script src="{% static 'main/script.js' %}"></script>
+    
+
+<div class = 'heading'>
+	<div class="logo-scroll animate">
+        <h1>DBC-Photos</h1>
+        <p>Student photography|DBC-Marem</p>
+    </div>
+    <div class="logo animate">
+        <h1>DBC-Photos</h1>
+        <p>Student photography|DBC-Marem</p>
+	</div>
+    <div class='menu'>	
+		<nav>
+			<a href="{% url 'dbc-home' %}">Home</a>
+			<a onclick="x('dep')">Departments</a>
+			<a onclick="x('clubs')">Clubs</a>
+			<a onclick="x('events')">Special Events</a>
+		</nav>	
+	</div>
+</div>
+	{% block upload %}
+	{% endblock %}
+<div class="img-body">
+        {% block content %}
+		{% endblock %}
+</div>
+<div class='top' onclick='topFun()'>
+	<i class="material-icons" style="font-size:30px">arrow_upward</i>
+</div>
+<div class='footer'>
+	<div class='footer-word'>
+		<h1>What is this site?</h1>
+		<p>This website is a gallery for all the activities of Don Bosco College Maram.
+			It is a time capsule project. All the content here are collectively own by
+			the members of DBC Maram. Any student is always welcome to contribute and take
+			part in this project.</p>
+		<form action="http//www.dbcmaram.ac.in/">
+			<button type="submit">More Info</button>
+		</form>
+    </div>
+    <div class='footer-link'>
+		<h1>Follow us on </h1>
+		<a href="https//www.facebook.com/dbcmaram"><i class="fa fa-facebook"> Facebook</i></a><br>
+		<a href="#"><i class="fa fa-instagram"> Instagram</i></a><br>
+		<a href="https//www.youtube.com/channel/UC_M8fC6CeFxsKikAFgx42xg"><i class="fa fa-youtube"> Youtube</i></a><br>
+	</div>
+</div>
+<div class="copy">
+    <h1>© 2020 Copyright</h1>
+</div>
+
+<div class="dep animate" onclick="x('dep')">
+	<p class='x'>X</p>
+	<div class="pop-list animate">
+		<h1>Departments</h1>
+		<p><a href="{% url 'catagory' 'Biotechnology'%}">Biotechnology</a></p>
+		<p><a href="{% url 'catagory' 'Botany'%}">Botany</a></p>
+		<p><a href="{% url 'catagory' 'Chemestry'%}">Chemestry</a></p>
+		<p><a href="{% url 'catagory' 'Commerce'%}">Commerce</a></p>
+		<p><a href="{% url 'catagory' 'Computer Science'%}">Computer Science</a></p>
+		<p><a href="{% url 'catagory' 'Economics'%}">Economics</a></p>
+		<p><a href="{% url 'catagory' 'Education'%}">Education</a></p>
+		<p><a href="{% url 'catagory' 'English'%}">English</a></p>
+		<p><a href="{% url 'catagory' 'History'%}">History</a></p>
+		<p><a href="{% url 'catagory' 'Mathematics'%}">Mathematics</a></p>
+		<p><a href="{% url 'catagory' 'Physics'%}">Physics</a></p>
+		<p><a href="{% url 'catagory' 'Political Science'%}">Political Science</a></p>
+		<p><a href="{% url 'catagory' 'Socialogy'%}">Socialogy</a></p>
+		<p><a href="{% url 'catagory' 'Social Work'%}">Social Work</a></p>
+		<p><a href="{% url 'catagory' 'Zoology'%}">Zoology</a></p>
+		<p><a href="{% url 'catagory' 'PG'%}">PG</a></p>			  
+	</div>
+</div>
+<div class="clubs animate" onclick="x('clubs')">
+	<div class="pop-list animate">
+		<h1>Clubs</h1>
+		<p><a href="{% url 'catagory' 'AICUF'%}">AICUF</a></p>
+		<p><a href="{% url 'catagory' 'BSSM'%}">BSSM</a></p>
+		<p><a href="{% url 'catagory' 'Campus Ministry'%}">Campus Ministry</a></p>
+		<p><a href="{% url 'catagory' 'Cultural Club'%}">Cultural Club</a></p>
+		<p><a href="{% url 'catagory' 'Debating Society'%}">Debating Society</a></p>
+		<p><a href="{% url 'catagory' 'Electoral Literacy Cell'%}">Electoral Literacy Cell</a></p>
+		<p><a href="{% url 'catagory' 'IT Club'%}">IT Club</a></p>
+		<p><a href="{% url 'catagory' 'Jesus Youth'%}">Jesus Youth</a></p>
+		<p><a href="{% url 'catagory' 'Maram Times'%}">Maram Times</a></p>
+		<p><a href="{% url 'catagory' 'Media Club'%}">Media Club</a></p>
+		<p><a href="{% url 'catagory' 'Music Club'%}">Music Club</a></p>
+		<p><a href="{% url 'catagory' 'Nature Club'%}">Nature Club</a></p>
+		<p><a href="{% url 'catagory' 'NSS'%}">NSS</a></p>
+		<p><a href="{% url 'catagory' 'Poetry Club'%}">Poetry Club</a></p>
+		<p><a href="{% url 'catagory' 'Red Ribbon'%}">Red Ribbon</a></p>
+		<p><a href="{% url 'catagory' 'Rovers and Rangers'%}">Rovers and Rangers</a></p>
+		<p><a href="{% url 'catagory' 'Science Club'%}">Science Club</a></p>
+		<p><a href="{% url 'catagory' 'Speech Club'%}">Speech Club</a></p>
+		<p><a href="{% url 'catagory' 'Sports Club'%}">Sports Club</a></p>
+		<p><a href="{% url 'catagory' 'Story Telling Club'%}">Story Telling Club</a></p>
+		<p><a href="{% url 'catagory' 'Women Cell'%}">Women Cell</a></p>		  
+	</div>
+</div>
+<div class="events animate" onclick="x('events')">
+	<div class="pop-list animate">
+		<h1>Events</h1>
+		<p><a href="{% url 'catagory' 'Sports Week'%}">Sports Week</a></p>
+		<p><a href="{% url 'catagory' 'Teachers Day'%}">Teacher's Day</a></p>
+		<p><a href="{% url 'catagory' 'Exams'%}">Exams</a></p>
+		<p><a href="{% url 'catagory' 'Others'%}">Others</a></p>		  
+	</div>
+</div>
+</body>
+</html>

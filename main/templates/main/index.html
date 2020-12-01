@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Home{% endblock %}
+
+{% block content %}
+<div class='img-wrap'>
+{% for image in images1 %}
+    <div class = 'container'>
+        <img src="{{image.img.url}}">
+        <nav class='img-info'>
+        <a>{{image.date}}</a>
+        <a>{{image.name}}</a>
+        <a class='fa fa-bookmark-o' href="{{image.img.url}}" download></a>
+        </nav>
+    </div>
+{% endfor %}
+</div>
+<div class='img-wrap'>
+{% for image in images2 %}
+    <div class = 'container'>
+        <img src="{{image.img.url}}">
+        <nav class='img-info'>
+        <a>{{image.date}}</a>
+        <a>{{image.name}}</a>
+        <a class='fa fa-bookmark-o' href="{{image.img.url}}" download></a>
+        </nav>
+    </div>
+{% endfor %}
+</div>
+<div class='img-wrap'>
+{% for image in images3 %}
+    <div class = 'container'>
+        <img src="{{image.img.url}}">
+        <nav class='img-info'>
+        <a>{{image.date}}</a>
+        <a>{{image.name}}</a>
+        <a class='fa fa-bookmark-o' href="{{image.img.url}}" download></a>
+        </nav>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

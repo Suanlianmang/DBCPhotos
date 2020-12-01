@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Upload {% endblock %}
+
+{% block upload %}
+<form action="{% url 'upload' %}" method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class='upload'>
+        {{form}}
+    </fieldset>
+    <button id = 'submit' type="submit" vaue="Submit">Upload</button>
+</form>
+{% endblock %}
