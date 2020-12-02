@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
 import dj_database_url
 
 
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True 
 
 ROOT_URLCONF = 'DBCPhotos.urls'
 
@@ -89,11 +91,13 @@ DATABASES = {
         'NAME': 'dbc_db', 
         'USER': 'postgres', 
         'PASSWORD': '',
-        'HOST': '127.0.0.1', 
-        'PORT': '5432',
+        'HOST': 'localhost', 
+        'PORT': '',
     }
 }
-DATABASES['default'] = dj_database_url.config(conn_max_age=500)
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -138,10 +142,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [
     ('main', os.path.join(BASE_DIR, 'main/static')),
 ]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-django_heroku.settings(locals())
 
-del DATABASES['default']['OPTIONS']['sslmode']
+

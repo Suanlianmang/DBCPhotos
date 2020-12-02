@@ -1,0 +1,21 @@
+{
+  "id": "dbcphotos",
+  "api": {
+    "config_vars_prefix": "DBCPHOTOS",
+    "config_vars": [
+      "DBCPHOTOS_URL"
+    ],
+    "password": "Cu2x9zhMMtEm0liJ4X4PAXzkHTLZOaaa",
+    "sso_salt": "puGMJTu1BEo9DLaCEfOjZCU24W6nCtKB",
+    "regions": [
+      "us"
+    ],
+    "requires": [],
+    "production": {
+      "base_url": "https://myaddon.com/heroku/resources",
+      "sso_url": "https://myaddon.com/sso/login"
+    },
+    "version": "3"
+  },
+  "name": "dbcphotos"
+}
